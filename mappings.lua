@@ -9,14 +9,14 @@ return {
     -- second key is the lefthand side of the map
 
     -- navigate buffer tabs with `H` and `L`
-    -- L = {
-    --   function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
-    --   desc = "Next buffer",
-    -- },
-    -- H = {
-    --   function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-    --   desc = "Previous buffer",
-    -- },
+    L = {
+      function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+      desc = "Next buffer",
+    },
+    H = {
+      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+      desc = "Previous buffer",
+    },
 
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {
@@ -37,12 +37,12 @@ return {
     -- ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", desc = "window down" },
     -- ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", desc = "window up" },
     ["<C-a>"] = { "gg<S-v>G" },
-    -- ["ss"] = { ":split<CR><C-w>w", desc = "split screen horizontally" },
-    -- ["sv"] = { ":vsplit<CR><C-w>w", desc = "split screen vertically" },
-    -- ["sh"] = { "<C-w>h", desc = "move cursor left" },
-    -- ["sl"] = { "<C-w>l", desc = "move cursor right" },
-    -- ["sj"] = { "<C-w>j", desc = "move cursor down" },
-    -- ["sk"] = { "<C-w>k", desc = "move cursor up" },
+    ["ss"] = { ":split<CR><C-w>w", desc = "split screen horizontally" },
+    ["sv"] = { ":vsplit<CR><C-w>w", desc = "split screen vertically" },
+    ["sh"] = { "<C-w>h", desc = "move cursor left" },
+    ["sl"] = { "<C-w>l", desc = "move cursor right" },
+    ["sj"] = { "<C-w>j", desc = "move cursor down" },
+    ["sk"] = { "<C-w>k", desc = "move cursor up" },
   },
   t = {
     -- setting a mapping to false will disable it

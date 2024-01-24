@@ -1,3 +1,6 @@
+local discipline = require "user.discipline"
+discipline.cowboy()
+
 return {
   -- You can also add new plugins here as well:
   -- Add plugins, the lazy syntax
@@ -13,20 +16,18 @@ return {
     "christoomey/vim-tmux-navigator",
     lazy = false,
   },
-  {
-
-    "nvim-neo-tree/neo-tree.nvim",
-    config = function()
-      require("neo-tree").setup {
-        windows = {
-          mappings = {
-            ["S"] = "",
-            ["s"] = "",
-          },
-        },
-      }
-    end,
-  },
+  -- {
+  --
+  --   "nvim-neo-tree/neo-tree.nvim",
+  --   config = function()
+  --     require("neo-tree").setup {
+  --       mappings = {
+  --         ["S"] = "",
+  --         ["s"] = "",
+  --       },
+  --     }
+  --   end,
+  -- },
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -44,6 +45,17 @@ return {
     keys = {
       { "<leader>T", "<cmd>TodoTelescope<cr>", desc = "Open TODOs in Telescope" },
     },
+  },
+  {
+    "mbbill/undotree",
+    keys = {
+      { "<leader><F5>", "<cmd>UndotreeToggle<cr>", desc = "Undotree Toggle" },
+    },
+  },
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+    config = function() require("telescope").load_extension "fzf" end,
   },
 }
 
