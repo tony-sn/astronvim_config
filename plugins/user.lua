@@ -57,6 +57,12 @@ return {
     build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
     config = function() require("telescope").load_extension "fzf" end,
   },
+  {
+    "catppuccin/nvim",
+    optional = true,
+    ---@type CatppuccinOptions
+    opts = { integrations = { mini = true, mason = true, neotree = true, notify = true } },
+  },
 }
 
 -- TODO:
